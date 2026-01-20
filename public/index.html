@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Footer Remover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>File Tools</h1>
+        <p>Select a tool to process your documents.</p>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="footer-remover">Footer Remover</div>
+            <div class="tab" data-tab="pdf-to-word">PDF to Word</div>
+        </div>
+
+        <!-- Footer Remover Section -->
+        <div id="footer-remover" class="tab-content active">
+            <h2>Remove Word Footer</h2>
+            <div class="upload-area" id="drop-zone-footer">
+                <div class="upload-icon">📄</div>
+                <h3>Drag & Drop Word File</h3>
+                <p>Supported format: .docx</p>
+                <input type="file" id="file-input-footer" class="file-input" accept=".docx">
+            </div>
+            <button id="btn-footer" class="btn" disabled>Remove Footer</button>
+            <div id="status-footer" class="status"></div>
+        </div>
+
+        <!-- PDF to Word Section -->
+        <div id="pdf-to-word" class="tab-content">
+            <h2>Convert PDF to Word</h2>
+            <div class="upload-area" id="drop-zone-pdf">
+                <div class="upload-icon">📑</div>
+                <h3>Drag & Drop PDF File</h3>
+                <p>Supported format: .pdf</p>
+                <input type="file" id="file-input-pdf" class="file-input" accept=".pdf">
+            </div>
+            <button id="btn-pdf" class="btn" disabled>Convert to Word</button>
+            <div id="status-pdf" class="status"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
