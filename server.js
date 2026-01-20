@@ -113,6 +113,12 @@ app.post('/convert-pdf', upload.single('file'), async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+// Only listen if not running in a serverless environment (Vercel exports the app)
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server running at http://localhost:${port}`);
+    });
+}
+
+module.exports = app;
+
